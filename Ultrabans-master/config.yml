@@ -1,0 +1,112 @@
+#Change to MySQL for mysql support#
+#Change to SQLite for sqlite support#
+Database: SQLite
+#MySQL Information#
+MySQL:
+  Database: 'jdbc:mysql://localhost:3306/minecraft'
+  User: 'root'
+  Password: 'root'
+  Table: 'banlist'
+  IPTable: 'banlistip'
+#SQLite Information#
+SQLite:
+  Filename: 'banlist'
+#delete data on ban#
+#Player file will be deleted from world folder
+CleanOnBan: true
+#clear warnings on ban#
+ClearWarnOnBan: false
+Log:
+  Enabled: true
+#Max Warnings#
+MaxWarning:
+  Enable: false
+  Amt: 5
+  #possible actions: ban,kick,ipban,perma,tempban,tempipban#
+  Result: ban
+  Silent: true
+  Reason: 'Max Warnings'
+  #Clear warnings for player when he reached max warnings?#
+  ClearWarns: true
+  #Used with Temporary actions#
+  Temp:
+    Amt: 5
+  #Types: sec,min,hour,day,week,month#
+    Mode: day
+#Default labels#
+Label:
+  Console: 'Server'
+  #if reason not defined
+  Reason: 'Unsure'
+#change to true or false to enable lockdown#
+#also can be done ingame /lockdown#
+#Players without required permissions can't
+#Join server during lockdown.
+Lockdown: false
+Login:
+#Check for duplicates on Login#
+  DupeCheck:
+    Enable: true
+#Auto Updater#
+AutoUpdater:
+  Enabled: true
+#Chat#
+Chat:
+  #Checks Chat Messages for a valid IP address#
+  #If its not valid, trust me they can't connect to it#
+  IPCheck:
+    Enable: true
+    #Wildcards %scramble% will scramble the ip and %replace% will show your ip instead#
+    #If no wildcards are present the message entered will replace the ip#
+    #leave blank to erase#
+    Blocking: '{Block}'
+    #kick,jail,warn,ban,ipban, leave blank for no action#
+    Result: warn
+    Silent: false
+    Reason: 'Advertising'
+  #This will allow you to filter out messages containing any words that you define#
+  SwearCensor:
+    Enable: true
+    #Use your imagination these are not for me to decide#
+    Words: 'test testing tests'
+    #Wildcards %scramble% will scramble the word#
+    #If no wildcards are present the message entered will replace the word#
+    #leave blank to erase#
+    Blocking: '{Block}'
+    #kick,jail,warn,ban,ipban, leave blank for no action#
+    Result: warn
+    Silent: false
+    Reason: 'Language'
+  #Checks if the message is duplicate and disables it#
+  SpamCheck:
+    Enable: true
+    #The amount of messages to give a result#
+    Counter: 10
+    #kick,jail,warn,ban,ipban, leave blank for no action#
+    Result: kick
+    Silent: false
+    Reason: 'Spam'
+Muted:
+  Vannila: true
+  #When Vanilla: true allowed commands.#
+  AllowedCommands:
+  - '/login'
+  - '/register'
+#Jail Configuration#
+Jail:
+  Mute: true
+  Vanilla: true
+  #When Vanilla: true allowed commands.#
+  AllowedCommands:
+  - '/login'
+  - '/register'
+Mode:
+  Second: Second
+  Minute: Minute
+  Hour: Hour
+  Day: Day
+  Week: Week
+  Month: Month
+  Year: Year
+  #Your language file name
+Language: 'en-us'
